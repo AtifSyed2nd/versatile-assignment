@@ -14,7 +14,7 @@ const List = () => {
   return (
     <div className='container my-5'>
         
-   {data.length? (<>{data.map((course) => <Link to={`product/${course._id}`}><div className="card mb-3" id='list'>
+   {data.length? (<>{data.map((course) => <Link style={{textDecoration: 'none'}} to={`product/${course._id}`}><div className="card mb-3" id='list'>
     <div className="row g-0">
       <div className="col-md-4">
         <img src={course.image} className="img-fluid rounded-start" alt="productImage"/>
