@@ -1,0 +1,49 @@
+h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: #1170bb;
+}
+p{
+  line-height: 30px;
+  font-size: 18px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.lbtn{
+  border: 2px solid black;
+  background: #fff;
+  font-size: 17px;
+  width: 100%;
+}
+.lbtn:hover{
+  border: 2px solid #1170bb;
+  background: #1170bb;
+  color: #fff;
+  font-size: 17px;
+  transition: 0.5s all;
+}
+
+.category{
+  color: green;
+  background: rgba(0, 128, 0, 0.25);
+  width: fit-content;
+  padding: 3px 10px;
+  margin: 5px;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white ;
+  background-color: black;
+  width: 100%;
+  height: 50vh;
+}
