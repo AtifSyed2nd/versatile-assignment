@@ -44,7 +44,7 @@ const Navbar = () => {
             </li>
           </ul>
           <a className="nav-link" href="/add">
-              <button className="btn btn-outline-success">Add <b className="fs-4">+</b> </button>
+              <button className="btn btn-outline-success pt-0">Add <b className="fs-4">+</b> </button>
               </a>
         </div>
       </div>

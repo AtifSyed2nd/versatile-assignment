@@ -16,8 +16,8 @@ const Product = () => {
     
     <nav aria-label="breadcrumb" >
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><Link to='/' className="noDecoration mt-3 text-dark">{` Home`}</Link></li>
-    <li class="breadcrumb-item active" aria-current="page">Products</li>
+    <li class="breadcrumb-item"><Link to='/' className=" fs-5 mt-3 text-dark">{` Home`}</Link></li>
+    <li class="breadcrumb-item active fs-5" aria-current="page">Products</li>
   </ol>
 </nav>
     <div className="m-5 p-3" id="product">
