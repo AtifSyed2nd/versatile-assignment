@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <div className='footer bg-dark'>
     <a className="navbar-brand" href="/">
           <img
-            src="https://visionarybizz.com/images/vs_logo.webp"
+            src="https://www.freepnglogos.com/uploads/vs-png/vintage-vs-with-black-lines-png-transparent-Images-12.png"
             alt="Bootstrap"
             width="250"
           />

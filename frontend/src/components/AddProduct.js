@@ -45,7 +45,7 @@ const AddProduct = ({setImage}) => {
 
   return (
     <div><div className='m-5' id="add">
-    <form className="row g-3 border border-2 rounded p-3 m-5" >
+    <form className="row g-3 border border-2 rounded p-3 m-5 w-75" >
       <h3>Add Product</h3>
     <div className="col-md-6">
       <label htmlFor="inputTitle" className="form-label">Title</label>
@@ -79,7 +79,7 @@ const AddProduct = ({setImage}) => {
     </div>
     
     <div className="col-12">
-      <button type="submit" onClick={handleSubmit} className="btn btn-primary">Submit in</button>
+      <button type="submit" onClick={handleSubmit} className="btn lbtn ms-2">Submit in</button>
     </div>
   </form>
     </div></div>

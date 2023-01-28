@@ -4,6 +4,7 @@ const Course = require('./model/courses')
 require('dotenv').config();
 const multer  = require('multer')
 const path = require('path');
+const { totalmem } = require('os');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -27,7 +28,7 @@ app.use(express.json());
 app.use('/uploads' ,express.static('./uploads'))
 
 app.post('/course', upload.single('image') ,async(req,res)=>{
-    console.log(req.file.path, "filePath");
+    // console.log(req.file.path, "filePath");
     const {
         title,
         description,
@@ -36,8 +37,8 @@ app.post('/course', upload.single('image') ,async(req,res)=>{
         category
       } = (req.body)
       const image = req.file.path
-    const course = new Course({
-            title,
+    const course = new Course({            
+            title,          // title: title, ==> title,
             image,
             description,
             author,

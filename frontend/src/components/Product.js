@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Product = () => {
   const [data, setData] = useState([])
@@ -13,6 +13,13 @@ const Product = () => {
   },[])
   return <>
   {data? (<div className="container">
+    
+    <nav aria-label="breadcrumb" >
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><Link to='/' className="noDecoration mt-3 text-dark">{` Home`}</Link></li>
+    <li class="breadcrumb-item active" aria-current="page">Products</li>
+  </ol>
+</nav>
     <div className="m-5 p-3" id="product">
       <div className="mb-3 row">
         <div className="col-lg-7 col12">

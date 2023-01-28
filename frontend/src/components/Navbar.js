@@ -5,14 +5,15 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
-            src="https://visionarybizz.com/images/vs_logo.webp"
+            src="https://www.freepnglogos.com/uploads/vs-png/vintage-vs-with-black-lines-png-transparent-Images-12.png"
+            // src="https://visionarybizz.com/images/vs_logo.webp"
             alt="Bootstrap"
             width="100"
           />
           {/* Visionary Services */}
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -31,7 +32,7 @@ const Navbar = () => {
               {/* <a className="nav-link active" aria-current="page" href="/">
                 Home
               </a> */}
-              <Link className="nav-link" to='/'>Home</Link>
+              {/* <Link className="nav-link" to='/'>Home</Link> */}
             </li>
             
             <li className="nav-item">

@@ -14,7 +14,7 @@ const List = () => {
   return (
     <div className='container my-5'>
         
-   {data.length? (<>{data.map((course) => <Link style={{textDecoration: 'none'}} to={`product/${course._id}`}><div className="card mb-3" id='list'>
+   {data.length? (<>{data.map((course) => <Link className='noDecoration' to={`product/${course._id}`}><div className="card mb-3" id='list'>
     <div className="row g-0">
       <div className="col-md-4">
         <img src={course.image} className="img-fluid listImg rounded-start" alt="productImage"/>
@@ -55,7 +55,7 @@ const List = () => {
                     <big>Rating</big>{" "}
                   </span>
                   <br />
-                  <s className=" ">{course.price*1.5} &#8377;</s>             
+                  <s className=" text-muted">{course.price*1.5} &#8377;</s>             
                 </div>
                 <div className="col-lg-12 col-6 my-2">
                  
