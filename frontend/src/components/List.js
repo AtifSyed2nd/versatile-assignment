@@ -17,7 +17,7 @@ const List = () => {
    {data.length? (<>{data.map((course) => <Link style={{textDecoration: 'none'}} to={`product/${course._id}`}><div className="card mb-3" id='list'>
     <div className="row g-0">
       <div className="col-md-4">
-        <img src={course.image} className="img-fluid rounded-start" alt="productImage"/>
+        <img src={course.image} className="img-fluid listImg rounded-start" alt="productImage"/>
       </div>
       <div className="col-md-8">
       <h1 className=" m-2 ms-4 ">{course.title}</h1>
@@ -39,7 +39,7 @@ const List = () => {
                   Category
                 </span> */}
                 <i className=" text-muted ">
-                  Date : 1/2/2023 .
+                  Date : {course.created_at && (course.created_at.toString().slice(0,10))}.
                 </i>
                
               </div>
@@ -54,17 +54,15 @@ const List = () => {
                     </b>{" "}
                     <big>Rating</big>{" "}
                   </span>
-                  <h5 className="my-2">{course.price} &#8377;</h5>
+                  <br />
+                  <s className=" ">{course.price*1.5} &#8377;</s>             
                 </div>
                 <div className="col-lg-12 col-6 my-2">
-                  <span>
-                    xyz
-                  </span>{" "}
-                  <br />
+                 
                   <span>Book now</span> <br />
                   
                   <h5 className=" text-success">
-                    Price &#8377; 
+                    {course.price} &#8377; 
                   </h5>
                 </div>
   

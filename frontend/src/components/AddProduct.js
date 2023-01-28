@@ -11,22 +11,34 @@ const AddProduct = ({setImage}) => {
         description: '',
         author: '',
         price: '',
-        category: ''
+        category: '',
+        date:''
     })
 
     const handleChange = (e) => {
         const {value, name} = e.target;
-        setInputValues((prevVal)=>({
+        if(name === 'image'){
+          setInputValues((prevVal)=>({
             ...prevVal,
-            [name]: value
+            [name]: e.target.files[0]
         }))
+        }else{
+          setInputValues((prevVal)=>({
+              ...prevVal,
+              [name]: value
+          }))
+        }
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("log",inputValues)
-        setImage(inputValues.image)
-        axios.post('/course',inputValues).then(res => navigate('/')).catch(err => console.log(err))
+        const formData = new FormData()
+        for (let key in inputValues){
+          formData.append(key, inputValues[key])
+        }
+        // setImage(inputValues.image)
+        axios.post('/course',formData).then(res => navigate('/')).catch(err => console.log(err))
     }
 
 
@@ -41,7 +53,7 @@ const AddProduct = ({setImage}) => {
     </div>
     <div className="col-md-6">
       <label htmlFor="image" className="form-label">Image</label>
-      <input type="file" className="form-control" id="image" name='image' value={inputValues.image} onChange={handleChange} />
+      <input type="file" className="form-control" id="image" name='image' onChange={handleChange} />
     </div>
     <div className="col-12">
       

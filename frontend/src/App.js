@@ -8,14 +8,14 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
-  const [image, setImage] = useState(null)
+  
   return (
     <div className="App">
       <BrowserRouter>
       <Navbar />
         <Routes>
-          <Route path="/" element={<List image={image} />}/>
-          <Route path="add" element={<AddProduct setImage={setImage} />} />
+          <Route path="/" element={<List  />}/>
+          <Route path="add" element={<AddProduct  />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
       </BrowserRouter>

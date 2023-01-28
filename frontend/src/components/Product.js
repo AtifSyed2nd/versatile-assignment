@@ -6,7 +6,10 @@ const Product = () => {
   const [data, setData] = useState([])
   const {id} = useParams()
   useEffect(()=>{
-    axios.get(`/course/${id}`).then(res => setData(res.data))
+    axios.get(`/course/${id}`).then(res => {
+     setData(res.data)
+     console.log(data)
+    })
   },[])
   return <>
   {data? (<div className="container">
@@ -15,7 +18,7 @@ const Product = () => {
         <div className="col-lg-7 col12">
           <img
             className="img-fluid w-75"
-            src="https://images.unsplash.com/photo-1627634777217-c864268db30c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWdlbmN5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=120"
+            src={`/${data.image}`|| " "}
             alt=""
           />
           <div className=" product col-12">
@@ -34,7 +37,7 @@ const Product = () => {
               {/* <span className="category" >
                 Category
               </span> */}
-              <i className=" text-muted my-2 ">Date : 1/2/2023 .</i>
+              <i className=" text-muted my-2 ">Date : {data.created_at && (data.created_at.toString().slice(0,10))} .</i>
             </div>
           </div>
         </div>
@@ -45,7 +48,7 @@ const Product = () => {
               <div className="img m-0 mb-2 p-0 w-100">
                 <img
                   className="img-fluid "
-                  src="https://images.unsplash.com/photo-1627634777217-c864268db30c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWdlbmN5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=120"
+                  src={`/${data.image}` || ""}
                   alt=""
                 />
               </div>
@@ -58,8 +61,9 @@ const Product = () => {
                 </b>{" "}
                 <big>Rating</big>{" "}
               </span>
-              <h5 className="my-2">{data.price} &#8377;</h5>
-              <span>xyz</span> <br />
+              <br />
+              <s className=" ">{data.price*1.5} &#8377;</s> 
+              <br />
               <span>Book now</span> <br />
               <h5 className=" text-success">{data.price} &#8377;</h5>
             <button

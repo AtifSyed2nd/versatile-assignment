@@ -2,7 +2,20 @@ const express = require('express');
 const connectDB = require('./db/connectDB');
 const Course = require('./model/courses')
 require('dotenv').config();
-const fs = require('fs');
+const multer  = require('multer')
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './uploads')
+    },
+    filename: function (req, file, cb) {
+        const fileName = path.basename(file.originalname, path.extname(file.originalname)) + Date.now().toString() + path.extname(file.originalname)
+        cb(null, fileName)
+    }
+  })
+  
+const upload = multer({ storage: storage })
 
 const port = process.env.PORT || 8000
 
@@ -11,17 +24,18 @@ const app = express();
 // app.use(express.static())
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use('/uploads' ,express.static('./uploads'))
 
-app.post('/course',async(req,res)=>{
+app.post('/course', upload.single('image') ,async(req,res)=>{
+    console.log(req.file.path, "filePath");
     const {
         title,
-        image,
         description,
         author,
         price,
         category
       } = (req.body)
-      console.log(image);
+      const image = req.file.path
     const course = new Course({
             title,
             image,
